@@ -16,10 +16,10 @@ public class GraphQLEndPoint extends SimpleGraphQLServlet {
 
     private static GraphQLSchema buildSchema() {
         ModuleBusiness mb= new ModuleBusiness();
-        //UniteEnseignementBusiness ueb=new UniteEnseignementBusiness();
+        UniteEnseignementBusiness ueb=new UniteEnseignementBusiness();
         return SchemaParser.newParser()
                .file("schema.graphql")
-               .resolvers(new Query(mb))
+               .resolvers(new Query(mb, ueb), new Mutations(ueb, mb))
                .build()
                .makeExecutableSchema();
 
