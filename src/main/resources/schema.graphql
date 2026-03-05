@@ -20,8 +20,8 @@ type Module {
 }
 type Query {
     getallmodules: [Module]
-
 }
+
 
 schema {
     query: Query

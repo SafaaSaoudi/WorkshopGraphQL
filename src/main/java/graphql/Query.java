@@ -11,15 +11,17 @@ import java.util.List;
 
 public class Query implements GraphQLRootResolver {
     private ModuleBusiness mb;
-    private UniteEnseignementBusiness ueb;
+
 
     public Query(ModuleBusiness mb) {
         this.mb = mb;
+
     }
 
     public List<Module> getallmodules() {
 
         return mb.getAllModules();
     }
+
 
 }
