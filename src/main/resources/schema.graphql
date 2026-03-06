@@ -20,17 +20,10 @@ type Module {
 }
 type Query {
     getallmodules: [Module]
-    getmodulesByType(type: TypeModule):[Module]
-    getAllUE:[UniteEnseignement]
 }
 
-type Mutations {
-    deleteUE(code : Int!):Boolean
-    addModule(matricule: String,  nom:String,  coefficient:Int,  volumeHoraire:Int,  type: TypeModule,  codeUE: Int): Module
-}
 
 
 schema {
     query: Query
-    mutation: Mutations
 }
