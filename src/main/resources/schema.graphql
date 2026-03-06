@@ -20,10 +20,14 @@ type Module {
 }
 type Query {
     getallmodules: [Module]
+    getUEbyCode(code: Int):UniteEnseignement
 }
 
-
+type Mutations {
+    deleteModule(matr:String):Boolean
+}
 
 schema {
     query: Query
+    mutation: Mutations
 }
